@@ -1,7 +1,7 @@
 import express from 'express'
 import router from './routes/routes'
 
-const port = process.env.PORT || 10000
+const PORT = process.env.PORT || 3000
 const app = express()
 app.use(express.json())
 
@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api', router)
-app.listen(port, () => {
+app.listen(PORT, () => {
 	console.log(`Servidor rodando em http://localhost:${PORT}`)
 })
