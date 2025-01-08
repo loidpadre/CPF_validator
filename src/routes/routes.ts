@@ -1,12 +1,12 @@
-import  express  from "express";
-import { validateFunction } from "../controllers/cpfController";
+import express from 'express'
+import { cpfController } from '../controllers/cpfController'
+import { cnpjController } from '../controllers/cnpjController'
+import { handle } from '../handle'
 
+const router = express.Router()
 
-const router = express.Router();
+router.get('/validate-cpf', handle(cpfController.validate))
 
-// Define uma simples routa
-router.get("/validate/:cpf", validateFunction);
+router.get('/validate-cnpj', handle(cnpjController.validate))
 
-
-
-export default router;
+export default router
